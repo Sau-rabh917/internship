@@ -1,0 +1,14 @@
+{
+  "name": "js-practice",
+  "version": "1.0.0",
+  "main": "array.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node array.js",
+    "DEV":"nodemon array.js"
+  },
+  
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
