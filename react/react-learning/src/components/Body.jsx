@@ -1,12 +1,8 @@
-import React from "react";
+import React from 'react'
 
-const App = () => {
-  const TextChange = () => {
-    document.querySelector("p").innerText =
-      "My Name is Saurabh Pandey and I am a Software Engineer";
-  };
+const Body = () => {
   return (
-    <>
+    <div>
 
       <main className="flex justify-center items-center min-h-screen bg-gray-100">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-8 w-full max-w-6xl">
@@ -48,8 +44,8 @@ const App = () => {
           </div>
         </div>
       </main>
-    </>
-  );
-};
+    </div>
+  )
+}
 
-export default App;
+export default Body
