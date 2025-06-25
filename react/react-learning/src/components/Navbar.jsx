@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
-              <nav className="bg-blue-600 shadow-md">
+     <nav className="bg-blue-600 shadow-md">
         <div className="container mx-auto flex justify-between items-center p-4">
           <div className="flex items-center">
             <img
@@ -14,9 +15,15 @@ const Navbar = () => {
             <span className="text-white text-2xl font-bold">MyWebsite</span>
           </div>
           <ul className="flex space-x-8">
-            <li className="text-white hover:text-blue-200 cursor-pointer">Home</li>
-            <li className="text-white hover:text-blue-200 cursor-pointer">About</li>
-            <li className="text-white hover:text-blue-200 cursor-pointer">Contact</li>
+            <li>
+              <Link to="/" className="text-white hover:text-blue-200 cursor-pointer">Home</Link>
+            </li>
+            <li>
+              <Link to="/about" className="text-white hover:text-blue-200 cursor-pointer">About</Link>
+            </li>
+            <li>
+              <Link to="/contact" className="text-white hover:text-blue-200 cursor-pointer">Contact</Link>
+            </li>
           </ul>
         </div>
       </nav>
