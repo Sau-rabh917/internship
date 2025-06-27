@@ -19,6 +19,6 @@ createRoot(document.getElementById("root")).render(
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-    </Router>
+    </ Router>
   </StrictMode>
 );
