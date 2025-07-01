@@ -1,11 +1,10 @@
-import React from 'react'
-
-const home = () => {
+import Body from "../components/Body.jsx";
+const Home = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+    <Body/>
+    </>
   )
 }
 
-export default home
+export default Home

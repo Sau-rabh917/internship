@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import requests from "../requests.jsx";
+import requests from "../Backend/requests.jsx";
 
 console.log("Requests object:", requests);
 
@@ -16,14 +16,14 @@ const Body = () => {
       .catch((error) => console.error("Error fetching data:", error));
   };
 
+  useEffect(() => {
+      fetchMovies();
+    }, []);
+
   return (
     <>
-      <button
-        className="bg-amber-500 w-40 rounded-2xl p-5 m-5 cursor-pointer "
-        onClick={fetchMovies}
-      >
-        Get Data
-      </button>
+     
+       
       {movies.map((elem) => {
         return (
           <>

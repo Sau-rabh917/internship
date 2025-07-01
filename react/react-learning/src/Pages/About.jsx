@@ -1,14 +1,40 @@
-import React from 'react'
+import React, { use } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import requests from "../Backend/requests.jsx";
+
+console.log("Requests object:", requests);
 
 const About = () => {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <h1 className="text-4xl font-bold text-blue-700 mb-4">About Us</h1>
-      <p className="text-lg text-gray-700 max-w-2xl text-center">
-        We are passionate about building modern web applications with React and Tailwind CSS. Our mission is to deliver high-quality, user-friendly, and visually appealing solutions for everyone.
-      </p>
-    </div>
-  );
-}
+  const [movies, setMovies] = useState("");
+  console.log("Movies state:", movies);
 
-export default About
+  const fetchMovies = async () => {
+    axios
+      .get("localhost:3000/" )
+      .then((response) => setMovies(response))
+      .catch((error) => console.error("Error fetching data:", error));
+  };
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+
+  return (
+    <>
+{/*     
+      {movies.map((elem) => {
+        return (
+          <> */}
+            <div>
+              {/* <img className="w-full p-0.5"
+                src={`https://image.tmdb.org/t/p/w500/${elem.backdrop_path}`}
+                alt="image"
+              /> */}
+              {movies}
+            </div>
+          {/* </> */}
+    </>
+  );
+};
+
+export default About;
