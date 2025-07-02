@@ -1,23 +1,17 @@
-// import http from "http";
-
-// const server = http.createServer((req, res) => {
-//   res.writeHead(200, { "Content-Type": "text/plain" });
-//   res.end("Hello, World!\n");
-// }); 
-
-// server.listen(3000, () => {
-//   console.log("Server is running on http://localhost:3000");
-// });
-
 import express from "express";
 
+import db from "./database.js";
+
+import {configDotenv} from "dotenv";
+
+configDotenv();
+db();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 app.get("/", (req, res) => {
-    res.json({name:"john",age:30,city:"New York"});
-  res.send("Hello, World!");
-});
+  res.send("Hello World!");
+}); 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
-export default app;
